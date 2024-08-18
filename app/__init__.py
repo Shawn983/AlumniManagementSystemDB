@@ -5,6 +5,7 @@ from .config import Config  # Import Config
 
 def create_app():
     app = Flask(__name__,template_folder='templates')
+    app.static_folder = 'static'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://default:kFfMWt6Zc1oX@ep-square-scene-a1p3btq7-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'  
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     # Load configuration from config.py
